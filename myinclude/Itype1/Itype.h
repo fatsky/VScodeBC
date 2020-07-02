@@ -1,35 +1,26 @@
 #if !defined(__ITYPE_H)
 #define __ITYPE_H
 
-typedef enum Ibool{false,true}Ibool;
+#include "BaseMethods/IDate.h"
+#include "BaseMethods/IFile.h"
 
-typedef struct Idate
-{
-    int year;
-    int month;
-    int date;
-    int hour;
-    int minute;
-}Idate;
+typedef enum Ibool{false,true} IBool;
+typedef enum Ibool{false,true} Ibool;
+/* The second typedef was because it was used in the previous code. */
 
-typedef struct Ifile
+typedef struct IFileNode
 {
-    char* name;
-    Idate date;
-    char* type;
-    long size;
-    char disk;
-    char* path;
-}Ifile;
-
-typedef struct IFnode
-{
-    Ifile file;
-    Ibool ishead;
-    struct IFnode* pre;
-    struct IFnode* next;
-    struct IFnode* child;
+    IFile file;
+    IBool ishead;
+    struct IFileNode* pre;
+    struct IFileNode* next;
+    struct IFileNode* child;
 }IFnode;
+
+typedef struct IFileNode IFileNode;
+typedef struct IFileNode IFnode;
+/* The second typedef was because it was used in the previous code. */
+
 
 Ibool addChild(IFnode* parent,Ifile* fchild);
 Ibool addSibling(IFnode* pre,Ifile* next);
