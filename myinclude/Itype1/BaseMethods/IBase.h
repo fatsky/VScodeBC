@@ -1,6 +1,5 @@
 /**
- * 然而并不会写文件注释QwQ
- * 一些基本的方法
+ * Methods NOT tested yet!!!
  **/
 #include <string.h>
 #include <stdlib.h>
