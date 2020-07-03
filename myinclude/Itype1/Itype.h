@@ -18,12 +18,11 @@ typedef struct IFileNode
 }IFnode;
 
 typedef struct IFileNode IFileNode;
-typedef struct IFileNode IFnode;
 /* The second typedef was because it was used in the previous code. */
 
 
-Ibool addChild(IFnode* parent,Ifile* fchild);
-Ibool addSibling(IFnode* pre,Ifile* next);
-Ibool delFlist(IFnode* root);
+IBool addChild(IFileNode* parent,IFile* fchild);
+IBool addSibling(IFileNode* pre,IFile* next);
+IBool delFlist(IFileNode* root);
 
 #endif

@@ -2,11 +2,12 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
-Ibool addChild(IFnode* parent,Ifile* fchild)
+
+IBool addChild(IFileNode* parent,IFile* fchild)
 {
-    IFnode *child=(IFnode*)malloc(sizeof(IFnode));
-    IFnode *temp=NULL;
-    child->file=*fchild;
+    IFileNode *child = (IFileNode*)malloc(sizeof(IFileNode));
+    IFileNode *temp = NULL;
+    child->file = *fchild;
     child->next=NULL;
     if(!strcmp(parent->file.name,"folder"))
         return 0;
@@ -33,7 +34,8 @@ Ibool addChild(IFnode* parent,Ifile* fchild)
     printf("its path is %c:\\%s%s\n",child->file.disk,strcmp(child->file.path,".")?child->file.path:"",child->file.name);
     return true;
 }
-Ibool delFlist(IFnode* root)
+
+IBool delFlist(IFileNode* root)
 {
     if(root->child)
     {
@@ -50,9 +52,10 @@ Ibool delFlist(IFnode* root)
     root=NULL;
     return 1;
 }
-Ibool addSibling(IFnode* pre,Ifile* next)
+
+IBool addSibling(IFileNode* pre,IFile* next)
 {
-    IFnode *temp=pre;
+    IFileNode *temp=pre;
     
     while(!temp->ishead)
     {

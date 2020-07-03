@@ -9,4 +9,4 @@ typedef struct IDate
     int minute;
 }Idate;
 
-typedef Idate IDate;
+typedef struct IDate IDate;
